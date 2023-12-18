@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056776474117",
+    "project_id": "medico-37f16",
+    "storage_bucket": "medico-37f16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056776474117:android:f2f1c3dca5c924870fd66c",
+        "android_client_info": {
+          "package_name": "com.shreeti.medico"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE1Uk5zP7SL4XLHszYIGRGcu4eZUcJh6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

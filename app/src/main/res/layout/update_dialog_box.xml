@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/displayBackground">
+    <EditText
+        android:id="@+id/etTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Task Title"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/etTaskDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Task Duration"
+        android:inputType="textPersonName"
+        android:ems="10"/>
+    <EditText
+        android:id="@+id/etTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Task Description"
+        android:inputType="textPersonName"
+        android:ems="10"/>
+
+    <Button
+        android:id="@+id/btnUpdateData"
+        android:layout_width="108dp"
+        android:layout_height="60dp"
+        android:text="Update Data"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:background="@null"
+        android:backgroundTint="@color/button"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

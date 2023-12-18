@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="task_Details_Size_in_display">25sp</dimen>
+</resources>
