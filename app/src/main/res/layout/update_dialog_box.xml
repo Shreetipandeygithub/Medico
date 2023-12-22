@@ -6,26 +6,43 @@
     android:padding="10dp"
     android:background="@color/displayBackground">
     <EditText
-        android:id="@+id/etTaskTitle"
+        android:id="@+id/etDrugName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Task Title"
+        android:hint="Drug Name"
         android:inputType="textPersonName"/>
     <EditText
-        android:id="@+id/etTaskDuration"
+        android:id="@+id/etDrugDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Task Duration"
+        android:hint="Drug Description"
         android:inputType="textPersonName"
         android:ems="10"/>
     <EditText
-        android:id="@+id/etTaskDescription"
+        android:id="@+id/etDrugSideEffect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Task Description"
+        android:hint="Side Effect"
+        android:inputType="textPersonName"
+        android:ems="10"/>
+
+    <EditText
+        android:id="@+id/etDrugPrevention"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Prevention"
+        android:inputType="textPersonName"
+        android:ems="10"/>
+    <EditText
+        android:id="@+id/etDrugTreatment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Treatment"
         android:inputType="textPersonName"
         android:ems="10"/>
 

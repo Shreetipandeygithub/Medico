@@ -35,7 +35,7 @@ class TaskManagementAdapter(
 
     override fun onBindViewHolder(holder: TaskManagementAdapter.ViewHolder, position: Int) {
         val currentTask=mList[position]
-        holder.tvTaskTitle.text=currentTask.taskTitle
+        holder.tvDrugName.text=currentTask.drugName
     }
 
     override fun getItemCount(): Int {
@@ -43,7 +43,7 @@ class TaskManagementAdapter(
     }
 
     class ViewHolder(itemView:View,clickListener: onItemClickListener):RecyclerView.ViewHolder(itemView){
-        val tvTaskTitle:TextView=itemView.findViewById(R.id.tvTaskTitle)
+        val tvDrugName:TextView=itemView.findViewById(R.id.tvDrugName)
 
         init {
             itemView.setOnClickListener{

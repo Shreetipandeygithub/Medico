@@ -66,10 +66,13 @@ class FetchingActivity : AppCompatActivity() {
                             val intent=Intent(this@FetchingActivity,Task_of_recyclerview_display_Activity::class.java)
 
                             //put Extra
-                            intent.putExtra("taskId",mList[position].taskId)
-                            intent.putExtra("taskTitle",mList[position].taskTitle)
-                            intent.putExtra("taskDuration",mList[position].taskDuration)
-                            intent.putExtra("taskDescription",mList[position].taskDescription)
+                            intent.putExtra("drugId",mList[position].drugId)
+                            intent.putExtra("drugName",mList[position].drugName)
+                            intent.putExtra("drugDescription",mList[position].drugDescription)
+                            intent.putExtra("drugSideEffect",mList[position].drugSideEffects)
+                            intent.putExtra("drugPrevention",mList[position].drugPrevention)
+                            intent.putExtra("drugTreatment",mList[position].drugTreatment)
+
                             startActivity(intent)
 
                         }

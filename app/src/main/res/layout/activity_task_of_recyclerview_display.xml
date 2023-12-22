@@ -21,10 +21,10 @@
         android:id="@+id/btnUpdate"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Update"
+        android:layout_marginTop="8dp"
         android:background="@null"
         android:backgroundTint="@color/button"
+        android:text="Update"
         app:layout_constraintEnd_toStartOf="@+id/btnDelete"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +34,10 @@
         android:id="@+id/btnDelete"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Delete"
+        android:layout_marginTop="8dp"
         android:background="@null"
         android:backgroundTint="@color/button"
+        android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnUpdate"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Task ID:"
+                    android:text="Drug ID:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/task_Details_Size_in_display"
@@ -88,7 +88,56 @@
                 android:background="@color/purple_200">
 
                 <TextView
-                    android:id="@+id/tvTaskId"
+                    android:id="@+id/tvDrugId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/task_Details_Size_in_display"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:layout_marginRight="2dp"
+                android:background="@color/purple_200">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Drug Name:"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/task_Details_Size_in_display"
+                    android:background="@color/purple_200"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:id="@+id/tvDrugName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -125,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Task Title:"
+                    android:text="Drug Description:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/task_Details_Size_in_display"
@@ -140,7 +189,7 @@
                 android:background="@color/purple_200">
 
                 <TextView
-                    android:id="@+id/tvTaskTitle"
+                    android:id="@+id/tvDrugDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -179,7 +228,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Task Duration:"
+                    android:text="Side Effects:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/task_Details_Size_in_display"
@@ -194,7 +243,7 @@
                 android:background="@color/purple_200">
 
                 <TextView
-                    android:id="@+id/tvTaskDuration"
+                    android:id="@+id/tvDrugSideEffect"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -209,15 +258,17 @@
 
         </LinearLayout>
 
-
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="90dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="7dp"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+
+            >
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -231,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Task Description"
+                    android:text="Prevention:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="@dimen/task_Details_Size_in_display"
@@ -246,7 +297,61 @@
                 android:background="@color/purple_200">
 
                 <TextView
-                    android:id="@+id/tvTaskDescription"
+                    android:id="@+id/tvDrugPrevention"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/task_Details_Size_in_display"
+                    android:background="@color/purple_200"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:layout_marginRight="2dp"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Treatment:"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/task_Details_Size_in_display"
+                    android:background="@color/purple_200"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:id="@+id/tvDrugTreatments"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

@@ -1,5 +1,6 @@
 package com.shreeti.medico.Activities
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,12 +12,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.shreeti.medico.R
 import com.shreeti.medico.Model.TaskManagementModel
 
-@Suppress("DEPRECATION")
 class InsertionActivity : AppCompatActivity() {
 
-    private lateinit var title: AppCompatEditText
-    private lateinit var duration: AppCompatEditText
-    private lateinit var description: AppCompatEditText
+    private lateinit var drugName: AppCompatEditText
+    private lateinit var drugDescription: AppCompatEditText
+    private lateinit var drugSideEffect: AppCompatEditText
+    private lateinit var drugPrevention: AppCompatEditText
+    private lateinit var drugTreatment: AppCompatEditText
+
     private lateinit var btnSave:Button
     private lateinit var toolbarinsertion: Toolbar
     private lateinit var dbRef: DatabaseReference
@@ -34,9 +37,12 @@ class InsertionActivity : AppCompatActivity() {
         }
 
 
-        title=findViewById(R.id.TaskTitle)
-        duration=findViewById(R.id.TaskDuration)
-        description=findViewById(R.id.TaskDescription)
+        drugName=findViewById(R.id.DrugName)
+        drugDescription=findViewById(R.id.DrugDescription)
+        drugSideEffect=findViewById(R.id.DrugSideEffect)
+        drugPrevention=findViewById(R.id.DrugPrevention)
+        drugTreatment=findViewById(R.id.DrugTreatment)
+
         btnSave=findViewById(R.id.btnSave)
 
         dbRef= FirebaseDatabase.getInstance().getReference("Task Management")
@@ -50,25 +56,33 @@ class InsertionActivity : AppCompatActivity() {
 
         //getting values from insertion activity
 
-        val Title=title.text.toString()
-        val Duration=duration.text.toString()
-        val Description=description.text.toString()
+        val DrugName=drugName.text.toString()
+        val DrugSideEffect=drugSideEffect.text.toString()
+        val DrugDescription=drugDescription.text.toString()
+        val DrugPrevention=drugPrevention.text.toString()
+        val DrugTreatment=drugTreatment.text.toString()
 
-        if (Title.isEmpty()){
-            title.error="Please Enter The Title"
+        if (DrugName.isEmpty()){
+            drugName.error="Please Enter The Name"
         }
-        if (Description.isEmpty()){
-            description.error="Please Enter the Description"
+        if (DrugDescription.isEmpty()){
+            drugDescription.error="Please Enter the Description"
         }
-        if (Duration.isEmpty()){
-            duration.error="Please Enter the Description"
+        if (DrugSideEffect.isEmpty()){
+            drugSideEffect.error="Please Enter the Side Effect"
+        }
+        if (DrugPrevention.isEmpty()){
+            drugPrevention.error="Please Enter the Prevention"
+        }
+        if (DrugTreatment.isEmpty()){
+            drugTreatment.error="Please Enter the Treatment"
         }
 
         //to differentiate same types of data eg Task1 and Task1
-        val taskId=dbRef.push().key!!
+        val DrugId=dbRef.push().key!!
 
-        val taskManagement= TaskManagementModel(taskId,Title,Duration,Description)    //used from saveTaskData
-        dbRef.child(taskId).setValue(taskManagement)
+        val taskManagement= TaskManagementModel(DrugId,DrugName,DrugDescription,DrugSideEffect,DrugPrevention,DrugTreatment)    //used from saveTaskData
+        dbRef.child(DrugId).setValue(taskManagement)
             .addOnCompleteListener{
                 Toast.makeText(this,"Successfully Inserted",Toast.LENGTH_SHORT).show()
 

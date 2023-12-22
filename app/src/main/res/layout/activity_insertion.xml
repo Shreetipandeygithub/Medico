@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.InsertionActivity"
     android:background="@color/displayBackground">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_Insertion"
@@ -35,7 +35,7 @@
             android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtTaskTitle"
+                android:id="@+id/txtDrugName"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="15dp"
@@ -48,17 +48,17 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/TaskTitle"
+                    android:id="@+id/DrugName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="Task Title"
+                    android:hint="Drug Name"
                     android:inputType="textCapSentences"
                     android:textSize="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtTaskDuration"
+                android:id="@+id/txtDrugDescription"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginLeft="15dp"
@@ -68,21 +68,70 @@
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtTaskTitle">
+                app:layout_constraintTop_toBottomOf="@id/txtDrugName">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/TaskDuration"
+                    android:id="@+id/DrugDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="Task Duration"
+                    android:hint="Drug Description"
                     android:inputType="textCapSentences"
                     android:textSize="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtTaskDescription"
+                android:id="@+id/txtDrugSideEffects"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#9D91B8"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDrugDescription">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/DrugSideEffect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="Side Effects"
+                    android:inputType="textCapSentences"
+                    android:textSize="20dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDrugPrevention"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#9D91B8"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDrugSideEffects">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/DrugPrevention"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="Prevention"
+                    android:inputType="textCapSentences"
+                    android:textSize="20dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDrugTreatment"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginLeft="15dp"
@@ -92,14 +141,14 @@
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtTaskDuration">
+                app:layout_constraintTop_toBottomOf="@id/txtDrugPrevention">
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/TaskDescription"
+                    android:id="@+id/DrugTreatment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:hint="Task Description"
+                    android:hint="Treatment"
                     android:inputType="textCapSentences"
                     android:textSize="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +164,7 @@
                 android:backgroundTint="@color/button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtTaskDescription" />
+                app:layout_constraintTop_toBottomOf="@id/txtDrugTreatment" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

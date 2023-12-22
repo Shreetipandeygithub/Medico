@@ -1,5 +1,6 @@
 package com.shreeti.medico.Activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,12 +15,14 @@ import com.shreeti.medico.Model.TaskManagementModel
 import com.shreeti.medico.R
 import java.time.Duration
 
-@Suppress("DEPRECATION")
 class Task_of_recyclerview_display_Activity : AppCompatActivity() {
-    private lateinit var tvTaskDescription:TextView
-    private lateinit var tvTaskDuration:TextView
-    private lateinit var tvTaskTitle:TextView
-    private lateinit var tvTaskId:TextView
+    private lateinit var tvDrugId:TextView
+    private lateinit var tvDrugName:TextView
+    private lateinit var tvDrugDescription:TextView
+    private lateinit var tvDrugSideEffect:TextView
+    private lateinit var tvDrugPrevention:TextView
+    private lateinit var tvDrugTreatment:TextView
+
     private lateinit var btnUpdate:Button
     private lateinit var btnDelete:Button
     private lateinit var toolbar:Toolbar
@@ -45,54 +48,77 @@ class Task_of_recyclerview_display_Activity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener{
             openUpdateDialog(
-                intent.getStringExtra("taskId").toString(),
-                intent.getStringExtra("taskTitle").toString()
+                intent.getStringExtra("drugId").toString(),
+                intent.getStringExtra("drugName").toString(),
+                intent.getStringExtra("drugDescription").toString(),
+                intent.getStringExtra("drugSideEffect").toString(),
+                intent.getStringExtra("drugPrevention").toString(),
+                intent.getStringExtra("drugTreatment").toString()
 
-            )
+
+
+                )
         }
 
         btnDelete.setOnClickListener{
             deleteRecord(
-                intent.getStringExtra("taskId").toString()
+                intent.getStringExtra("drugId").toString()
             )
         }
     }
 
     private fun initView(){
-        tvTaskId=findViewById(R.id.tvTaskId)
-        tvTaskTitle=findViewById(R.id.tvTaskTitle)
-        tvTaskDuration=findViewById(R.id.tvTaskDuration)
-        tvTaskDescription=findViewById(R.id.tvTaskDescription)
+        tvDrugId=findViewById(R.id.tvDrugId)
+        tvDrugName=findViewById(R.id.tvDrugName)
+        tvDrugDescription=findViewById(R.id.tvDrugDescription)
+        tvDrugSideEffect=findViewById(R.id.tvDrugSideEffect)
+        tvDrugPrevention=findViewById(R.id.tvDrugPrevention)
+        tvDrugTreatment=findViewById(R.id.tvDrugTreatments)
+
     }
 
     private fun setValueToView(){
-        tvTaskId.text=intent.getStringExtra("taskId")
-        tvTaskTitle.text=intent.getStringExtra("taskTitle")
-        tvTaskDuration.text=intent.getStringExtra("taskDuration")
-        tvTaskDescription.text=intent.getStringExtra("taskDescription")
+        tvDrugId.text=intent.getStringExtra("drugId")
+        tvDrugName.text=intent.getStringExtra("drugName")
+        tvDrugDescription.text=intent.getStringExtra("drugDescription")
+        tvDrugSideEffect.text=intent.getStringExtra("drugSideEffect")
+        tvDrugPrevention.text=intent.getStringExtra("drugPrevention")
+        tvDrugTreatment.text=intent.getStringExtra("drugTreatment")
+
 
     }
 
     private fun openUpdateDialog(
-        taskId:String,
-        taskTitle:String){
+        drugId:String,
+        drugName:String,
+        drugDescription:String,
+        drugSideEffects:String,
+        drugPrevention:String,
+        drugTreatment:String
+    ){
         val mDialog=AlertDialog.Builder(this)
         val inflater=layoutInflater
         val mDialogView=inflater.inflate(R.layout.update_dialog_box,null)
 
         mDialog.setView(mDialogView)
 
-        val etTaskTitle=mDialogView.findViewById<EditText>(R.id.etTaskTitle)
-        val etTaskDuration=mDialogView.findViewById<EditText>(R.id.etTaskDuration)
-        val etTaskDescription=mDialogView.findViewById<EditText>(R.id.etTaskDescription)
+        val etDrugName=mDialogView.findViewById<EditText>(R.id.etDrugName)
+        val etDrugDescription=mDialogView.findViewById<EditText>(R.id.etDrugDescription)
+        val etDrugSideEffects=mDialogView.findViewById<EditText>(R.id.etDrugSideEffect)
+        val etDrugPrevention=mDialogView.findViewById<EditText>(R.id.etDrugPrevention)
+        val etDrugTreatment=mDialogView.findViewById<EditText>(R.id.etDrugTreatment)
+
         val btnUpdateData=mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
 
-        etTaskTitle.setText(intent.getStringExtra("taskTitle").toString())
-        etTaskDuration.setText(intent.getStringExtra("taskDuration").toString())
-        etTaskTitle.setText(intent.getStringExtra("taskDescription").toString())
+        etDrugName.setText(intent.getStringExtra("drugName").toString())
+        etDrugDescription.setText(intent.getStringExtra("drugDescription").toString())
+        etDrugSideEffects.setText(intent.getStringExtra("drugSideEffect").toString())
+        etDrugPrevention.setText(intent.getStringExtra("drugPrevention").toString())
+        etDrugTreatment.setText(intent.getStringExtra("drugTreatment").toString())
 
-        mDialog.setTitle("Updating $taskTitle Record")
+
+        mDialog.setTitle("Updating $etDrugName Record")
         val alertDialog=mDialog.create()
         alertDialog.show()
 
@@ -101,19 +127,24 @@ class Task_of_recyclerview_display_Activity : AppCompatActivity() {
             updateTaskData(
 
                 //these are the edit text view that has to be updated on the fetch activity text views
-                taskId,
-                etTaskTitle.text.toString(),
-                etTaskDuration.text.toString(),
-                etTaskDescription.text.toString()
+                drugId,
+                etDrugName.text.toString(),
+                etDrugDescription.text.toString(),
+                etDrugSideEffects.text.toString(),
+                etDrugPrevention.text.toString(),
+                etDrugTreatment.text.toString()
             )
 
-            Toast.makeText(applicationContext,"Task Management Data Updated",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Medico Data Updated",Toast.LENGTH_SHORT).show()
 
 
             //we are setting updated data to our textViews
-            tvTaskTitle.text=etTaskTitle.text.toString()
-            tvTaskDuration.text=etTaskDuration.text.toString()
-            tvTaskDescription.text=etTaskDescription.text.toString()
+
+            tvDrugName.text=etDrugName.text.toString()
+            tvDrugDescription.text=etDrugDescription.text.toString()
+            tvDrugSideEffect.text=etDrugSideEffects.text.toString()
+            tvDrugPrevention.text=etDrugPrevention.text.toString()
+            tvDrugTreatment.text=etDrugTreatment.text.toString()
 
             alertDialog.dismiss()
         }
@@ -121,12 +152,15 @@ class Task_of_recyclerview_display_Activity : AppCompatActivity() {
 
     private fun updateTaskData(
         id:String,
-        title:String,
-        duration: String,
-        description:String
+        name:String,
+        description:String,
+        sideEffect:String,
+        prevention:String,
+        treatment:String
+
     ){
         val dbRef=FirebaseDatabase.getInstance().getReference("Task Management").child(id)
-        val taskInfo=TaskManagementModel(id,title,duration,description)
+        val taskInfo=TaskManagementModel(id,name,description,sideEffect,prevention,treatment)
 
         dbRef.setValue(taskInfo)
 

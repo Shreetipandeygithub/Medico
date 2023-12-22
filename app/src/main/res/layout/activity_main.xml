@@ -27,16 +27,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_MainActivity">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="151dp"
+                android:text="Drugs Abuse Rehabilitation and Treatment Application"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.612"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="65dp" />
+
             <Button
                 android:id="@+id/InsertData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:backgroundTint="@color/button"
-                android:text="Insert Task Details"
+                android:text="Insert Drug Details"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"
@@ -49,7 +65,7 @@
                 android:id="@+id/fetchData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fetch Task Details"
+                android:text="Fetch Drug Details"
                 android:background="@null"
                 android:backgroundTint="@color/teal_700"
                 app:layout_constraintBottom_toBottomOf="@id/InsertData"
